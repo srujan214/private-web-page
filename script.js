@@ -115,6 +115,11 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
+    // --- EXPLORE BUTTON (Since Video 2 was removed) ---
+    document.getElementById('explore-btn').addEventListener('click', () => {
+        showRoast("You want to explore my world? It's mostly just me staring at a screen.");
+    });
+
     // --- ROAST TOAST SYSTEM (Dark Humor) ---
     const roasts = [
         "Did you really click that? I'm disappointed.",

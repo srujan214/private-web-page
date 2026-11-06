@@ -45,8 +45,8 @@
                 <p class="hero-desc">Developer in progress. Debugging life since birth. I write code, break things, and then wonder why it worked in the first place.</p>
                 
                 <div class="hero-buttons">
-                    <!-- Video 2: Played full screen on click -->
-                    <button class="btn btn-primary hidden-trigger" data-media="assets/video2.mp4" data-type="video">Explore My World</button>
+                    <!-- Video 2 removed, just a roast now -->
+                    <button class="btn btn-primary" id="explore-btn">Explore My World</button>
                     <!-- Audio 3: Plays automatically on click -->
                     <button class="btn btn-outline hidden-trigger" data-media="assets/audio3.mp3" data-type="audio">See What I Build</button>
                 </div>
@@ -69,7 +69,16 @@
         </div>
         <div class="about-grid">
             <div class="about-text reveal">
-                <p class="hidden-trigger" data-media="assets/audio4.mp3" data-type="audio" style="cursor: pointer;">I'm a Computer Science student who spends 80% of my time debugging and the other 20% pretending I know what I'm doing. I don't have a 10-year plan, just a "let's see if this compiles" plan.</p>
+                <!-- Hidden Audio 4 on Text Click -->
+                <div class="hidden-trigger" data-media="assets/audio4.mp3" data-type="audio" style="cursor: pointer;">
+                    <p>昨日、冷蔵庫の中で小さな社長が月曜日と結婚した。</p>
+                    <p>その結果、三匹のバナナが宇宙の警察に逮捕され、カエルは突然プログラミングを始めた。</p>
+                    <p>しかし、電子レンジはすべてを知っていた。</p>
+                    <p>「お前のWi-Fiは前世で寿司だった」と彼は静かに言った。</p>
+                    <p>その瞬間、空から巨大な豆腐が降り注ぎ、世界中の猫が同時に「お疲れ様です」と叫んだ。</p>
+                    <p>そして伝説は終わった。</p>
+                    <p>いや、まだ洗濯機が踊っている。</p>
+                </div>
                 <p>I am fluent in Java, Python, and sarcasm. Do not ask me for help with your printer.</p>
             </div>
             <div class="about-stats reveal">
@@ -94,11 +103,11 @@
         </div>
         
         <div class="talent-grid">
-            <!-- Hidden Video 5 on Pushup Click -->
-            <div class="talent-card reveal hidden-trigger" data-media="assets/video5.mp4" data-type="video" style="cursor: pointer;">
+            <!-- Video 5 removed, no trigger, just a normal card -->
+            <div class="talent-card reveal">
                 <div class="icon pulse-lime" style="font-size: 4rem;">💪</div>
-                <h3>One-Hand Stand Pushups</h3>
-                <p>I can do exactly one. On a good day. If the planets align and no one is watching. It's a highly specialized skill.</p>
+                <h3>One-arm handstand push-ups</h3>
+                <p>I can do exactly one. On a good day. It's a highly specialized skill.</p>
             </div>
         </div>
     </section>
@@ -111,7 +120,7 @@
             <p>I'm kidding. Reach out. Or don't. I'm not your dad.</p>
             <a href="mailto:srijanhh7@gmail.com" class="email-btn" onclick="event.stopPropagation();">srijanhh7@gmail.com</a>
         </div>
-        <p class="footer-copy">&copy; 2024 Srujan A Naik. Built for fun. Please lower your expectations.</p>
+        <p class="footer-copy">&copy; 2026 Srujan A Naik. Please lower your expectations.</p>
     </footer>
 
     <!-- UNIVERSAL MEDIA MODAL -->
