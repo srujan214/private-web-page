@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>SRUJAN | Developer in Progress</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=Syne:wght@700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Noise & Ambient Glows -->
+    <div class="noise-overlay"></div>
+    <div class="ambient-glow glow-lime"></div>
+    <div class="ambient-glow glow-purple"></div>
+    <div class="ambient-glow glow-coral"></div>
+
+    <!-- NAVIGATION -->
+    <nav class="navbar">
+        <!-- Hidden Audio 1 on Logo Click -->
+        <div class="logo glitch hidden-trigger" data-media="assets/audio1.mp3" data-type="audio" data-text="SRUJAN.">SRUJAN.</div>
+        <ul class="nav-links">
+            <!-- Hidden Video 1 on Home Click -->
+            <li><a href="#hero" class="nav-link hidden-trigger" data-media="assets/video1.mp4" data-type="video">Home</a></li>
+            <li><a href="#about" class="nav-link">About</a></li>
+            <li><a href="#talents" class="nav-link">Talents</a></li>
+            <li><a href="#contact" class="nav-link">Contact</a></li>
+        </ul>
+        <div class="mobile-toggle">☰</div>
+    </nav>
+
+    <!-- HERO SECTION -->
+    <header class="hero" id="hero">
+        <div class="hero-bg-text parallax" data-speed="0.2">SRUJAN</div>
+        
+        <div class="hero-content">
+            <div class="hero-left reveal">
+                <div class="badge">WELCOME TO MY LITTLE CORNER</div>
+                <!-- Hidden Audio 2 on Title Click -->
+                <h1 class="hero-title hidden-trigger" data-media="assets/audio2.mp3" data-type="audio">
+                    I'm Srujan.<br><span class="text-lime">Not everyone's</span><br> favourite bug.
+                </h1>
+                <p class="hero-desc">Developer in progress. Debugging life since birth. I write code, break things, and then wonder why it worked in the first place.</p>
+                
+                <div class="hero-buttons">
+                    <!-- Video 2: Played full screen on click -->
+                    <button class="btn btn-primary hidden-trigger" data-media="assets/video2.mp4" data-type="video">Explore My World</button>
+                    <!-- Audio 3: Plays automatically on click -->
+                    <button class="btn btn-outline hidden-trigger" data-media="assets/audio3.mp3" data-type="audio">See What I Build</button>
+                </div>
+            </div>
+
+            <!-- Just a clean image, no buttons, no clicks -->
+            <div class="hero-right reveal">
+                <div class="image-container">
+                    <img src="assets/profile.jpg" alt="Srujan A Naik" onerror="this.src='https://via.placeholder.com/400x500?text=Add+profile.jpg'">
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- ABOUT SECTION -->
+    <section class="section about" id="about">
+        <!-- Hidden Video 3 on Heading Click -->
+        <div class="section-header reveal hidden-trigger" data-media="assets/video3.mp4" data-type="video">
+            <h2 class="brutalist-title text-outline">BEHIND THE SCREEN</h2>
+        </div>
+        <div class="about-grid">
+            <div class="about-text reveal">
+                <p class="hidden-trigger" data-media="assets/audio4.mp3" data-type="audio" style="cursor: pointer;">I'm a Computer Science student who spends 80% of my time debugging and the other 20% pretending I know what I'm doing. I don't have a 10-year plan, just a "let's see if this compiles" plan.</p>
+                <p>I am fluent in Java, Python, and sarcasm. Do not ask me for help with your printer.</p>
+            </div>
+            <div class="about-stats reveal">
+                <!-- Hidden Video 4 on Stat Click -->
+                <div class="stat-box hidden-trigger" data-media="assets/video4.mp4" data-type="video">
+                    <h3 class="text-lime">99%</h3>
+                    <p>Chance my code is held together by duct tape</p>
+                </div>
+                <div class="stat-box">
+                    <h3 class="text-purple">404</h3>
+                    <p>Patience for stupid questions</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- HIDDEN TALENTS SECTION -->
+    <section class="section talents" id="talents">
+        <div class="section-header reveal">
+            <h2 class="brutalist-title text-outline">HIDDEN TALENTS</h2>
+            <span class="subtitle">Things definitely not on my resume</span>
+        </div>
+        
+        <div class="talent-grid">
+            <!-- Hidden Video 5 on Pushup Click -->
+            <div class="talent-card reveal hidden-trigger" data-media="assets/video5.mp4" data-type="video" style="cursor: pointer;">
+                <div class="icon pulse-lime" style="font-size: 4rem;">💪</div>
+                <h3>One-Hand Stand Pushups</h3>
+                <p>I can do exactly one. On a good day. If the planets align and no one is watching. It's a highly specialized skill.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTACT SECTION -->
+    <footer class="section contact" id="contact">
+        <!-- Hidden Video 6 on Contact Title Click -->
+        <div class="contact-content reveal hidden-trigger" data-media="assets/video6.mp4" data-type="video">
+            <h2 class="brutalist-title text-outline">LET'S NEVER CONNECT.</h2>
+            <p>I'm kidding. Reach out. Or don't. I'm not your dad.</p>
+            <a href="mailto:srijanhh7@gmail.com" class="email-btn" onclick="event.stopPropagation();">srijanhh7@gmail.com</a>
+        </div>
+        <p class="footer-copy">&copy; 2024 Srujan A Naik. Built for fun. Please lower your expectations.</p>
+    </footer>
+
+    <!-- UNIVERSAL MEDIA MODAL -->
+    <div class="media-modal" id="media-modal">
+        <div class="modal-backdrop"></div>
+        
+        <!-- Video Player (Fullscreen) -->
+        <div class="video-wrapper" id="video-wrapper">
+            <video id="modal-video" playsinline></video>
+        </div>
+
+        <!-- Audio Player (Sleek UI) -->
+        <div class="audio-wrapper" id="audio-wrapper" style="display: none;">
+            <div class="audio-visualizer">
+                <span></span><span></span><span></span><span></span><span></span>
+            </div>
+            <h3>Playing Audio...</h3>
+            <audio id="modal-audio" controls></audio>
+        </div>
+    </div>
+
+    <!-- SARCASM TOAST POPUP -->
+    <div class="roast-toast" id="roast-toast"></div>
+
+    <script src="script.js"></script>
+</body>
+</html>
