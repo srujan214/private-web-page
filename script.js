@@ -29,14 +29,22 @@ document.addEventListener('DOMContentLoaded', () => {
     
     revealElements.forEach(el => revealObserver.observe(el));
 
-    // --- PARALLAX EFFECT ---
+    // --- OPTIMIZED PARALLAX EFFECT ---
     const parallaxElements = document.querySelectorAll('.parallax');
+    let ticking = false;
+
     window.addEventListener('scroll', () => {
-        const scrolled = window.pageYOffset;
-        parallaxElements.forEach(el => {
-            const speed = el.getAttribute('data-speed');
-            el.style.transform = `translateY(${scrolled * speed}px)`;
-        });
+        if (!ticking) {
+            window.requestAnimationFrame(() => {
+                const scrolled = window.pageYOffset;
+                parallaxElements.forEach(el => {
+                    const speed = el.getAttribute('data-speed');
+                    el.style.transform = `translate3d(-50%, calc(-50% + ${scrolled * speed}px), 0)`;
+                });
+                ticking = false;
+            });
+            ticking = true;
+        }
     });
 
     // --- UNIVERSAL MEDIA MODAL SYSTEM ---
@@ -80,7 +88,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
     function closeMedia() {
         mediaModal.classList.remove('active');
-        // Wait for transition to finish before stopping media to avoid chopping
         setTimeout(() => {
             modalVideo.pause();
             modalVideo.currentTime = 0;
@@ -91,16 +98,14 @@ document.addEventListener('DOMContentLoaded', () => {
         }, 300);
     }
 
-    // Click outside to close
     modalBackdrop.addEventListener('click', closeMedia);
 
-    // **Auto-close video when it ends**
     modalVideo.addEventListener('ended', () => {
         closeMedia();
         showRoast("Video over. Did that help your ego? No.");
     });
 
-    // --- ATTACH MEDIA TRIGGERS (The Hidden Interactions) ---
+    // --- ATTACH MEDIA TRIGGERS ---
     const triggers = document.querySelectorAll('.hidden-trigger');
     
     triggers.forEach(el => {
@@ -108,19 +113,18 @@ document.addEventListener('DOMContentLoaded', () => {
             const src = this.getAttribute('data-media');
             const type = this.getAttribute('data-type');
             
-            // Don't trigger if it's the email link (we want it to open mail app)
             if (this.tagName === 'A' && this.getAttribute('href').startsWith('mailto:')) return;
 
             playMedia(type, src);
         });
     });
 
-    // --- EXPLORE BUTTON (Since Video 2 was removed) ---
+    // --- EXPLORE BUTTON ---
     document.getElementById('explore-btn').addEventListener('click', () => {
         showRoast("You want to explore my world? It's mostly just me staring at a screen.");
     });
 
-    // --- ROAST TOAST SYSTEM (Dark Humor) ---
+    // --- ROAST TOAST SYSTEM ---
     const roasts = [
         "Did you really click that? I'm disappointed.",
         "Your time management skills are showing.",
@@ -150,7 +154,6 @@ document.addEventListener('DOMContentLoaded', () => {
         }, 3500);
     }
 
-    // Attach general roasts to non-trigger elements
     document.querySelectorAll('.stat-box:not(.hidden-trigger), .email-btn').forEach(el => {
         el.addEventListener('click', () => {
             setTimeout(() => showRoast(), 100);
